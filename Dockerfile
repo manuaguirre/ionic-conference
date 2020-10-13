@@ -5,5 +5,4 @@ RUN npm install -g ionic serve
 RUN npm install
 COPY ./ /app/
 RUN npm run build
-RUN serve -s build
-EXPOSE 3000
+EXPOSE 5000
