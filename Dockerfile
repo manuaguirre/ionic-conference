@@ -1,9 +1,9 @@
-FROM node:13-alpine as build
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install -g ionic serve
+FROM node:13-alpine
+WORKDIR /app/
+COPY package*.json .
+RUN npm install -g @ionic/cli serve
 RUN npm install
-COPY ./ /app/
-RUN npm run build
+COPY . ./
 EXPOSE 5000
-CMD ["npm", "serve"]
+RUN pwd; ls; echo "\n"; ls /app;
+CMD ["npm", "start"]
